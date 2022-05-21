@@ -1,0 +1,33 @@
+.clients__list {
+  @extend %list;
+  display: flex;
+  margin-top: 50px;
+}
+
+.clients__item + .clients__item {
+  margin-left: 30px;
+}
+
+.clients__link {
+  @extend %centeredFlex;
+
+  width: 170px;
+  height: 92px;
+
+  @include bordered($icon-color);
+  color: $icon-color;
+  cursor: pointer;
+  @extend %link;
+  transition: border-color $duration $timing-function, color $duration $timing-function;
+
+  &:hover,
+  &:focus {
+    border-color: $accent-color;
+    color: $accent-color;
+  }
+}
+
+.clients__icon {
+  @include icon(106px, 60px);
+  fill: currentColor;
+}

@@ -1,0 +1,19 @@
+.logo {
+  display: block;
+  @extend %link;
+  @include font(24px, 700, 1.17, 0.03em);
+  font-family: $secondary-font;
+  color: $accent-color;
+
+  &__span {
+    color: $logo-accent-color;
+
+    &--white {
+      color: $title-color;
+    }
+  }
+
+  @media screen and (min-width: 1200px) {
+    @include font(26px, 700, 1.19, 0.03em);
+  }
+}

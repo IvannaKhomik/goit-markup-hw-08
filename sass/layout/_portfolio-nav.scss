@@ -1,0 +1,33 @@
+.portfolio-nav {
+  @extend %list;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+
+.portfolio-nav__item {
+  margin-left: 8px;
+  @extend %link;
+
+  &:first-child {
+    margin-left: 0;
+  }
+}
+
+.portfolio-nav__btn {
+  padding: 6px 22px;
+  @include font(null, 500, 1.63, 0.03em);
+  background-color: $secondary-back-color;
+  color: $primary-text-color;
+  transition: background-color $duration $timing-function, color $duration $timing-function,
+    box-shadow $duration $timing-function;
+
+  &--accent,
+  &:hover,
+  &:focus {
+    background-color: $accent-color;
+    color: $title-color;
+    box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
+      0px 2px 2px rgba(0, 0, 0, 0.12);
+  }
+}

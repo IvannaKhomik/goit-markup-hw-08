@@ -1,0 +1,6 @@
+.title {
+  @include font(36px, null, 1.17, 0.03em);
+  text-align: center;
+
+  color: $primary-text-color;
+}
