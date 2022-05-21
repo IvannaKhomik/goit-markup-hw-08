@@ -3,13 +3,16 @@
 .header-contacts {
   @extend %list;
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-top: 21px;
+  padding-bottom: 21px;
 
-  @media screen and (min-width: 768px) and (max-width: 1200px) {
-    flex-direction: column;
-    align-items: flex-start;
-    padding-top: 21px;
-    padding-bottom: 21px;
+  @media screen and (min-width: 1200px) {
+    flex-direction: row;
+    align-items: center;
+    padding-top: 0;
+    padding-bottom: 0;
   }
 }
 
@@ -29,7 +32,6 @@
   @media screen and (min-width: 1200px) {
     padding-top: 32px;
     padding-bottom: 32px;
-
     @include font(14px, 500, 1.14, 0.02em);
   }
 }
@@ -41,6 +43,7 @@
     }
 
     @media screen and (min-width: 1200px) {
+      margin-bottom: 0;
       margin-right: 30px;
     }
   }

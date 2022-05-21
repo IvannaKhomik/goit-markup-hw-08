@@ -16,6 +16,11 @@
 }
 
 // BUTTON-MOBILE
+
+.menu-open-btn {
+  @extend %button;
+}
+
 .open-icon,
 .close-icon {
   fill: $primary-text-color;
@@ -30,6 +35,11 @@
   @media screen and (min-width: 768px) {
     padding-top: 26px;
     padding-bottom: 26px;
+  }
+
+  @media screen and (min-width: 1200px) {
+    padding-top: 24px;
+    padding-bottom: 25px;
   }
 }
 

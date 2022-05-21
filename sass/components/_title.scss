@@ -1,6 +1,11 @@
 .title {
-  @include font(36px, null, 1.17, 0.03em);
+  @include font(28px, 700, 1.18, 0.03em);
   text-align: center;
-
   color: $primary-text-color;
+  margin-bottom: 30px;
+
+  @media screen and (min-width: 1200px) {
+    @include font(36px, null, 1.17, 0.03em);
+    margin-bottom: 50px;
+  }
 }

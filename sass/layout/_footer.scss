@@ -2,20 +2,44 @@
   padding: 60px 0;
   background: $back-color;
 
-  .container {
+  &__set {
+    width: 100%;
     display: flex;
-    align-items: baseline;
+    flex-direction: column;
+    text-align: center;
+    @media screen and (min-width: 768px) {
+      flex-direction: row;
+      flex-wrap: wrap;
+      align-items: baseline;
+      justify-content: center;
+    }
+    @media screen and (min-width: 1200px) {
+      flex-wrap: nowrap;
+      text-align: left;
+    }
   }
 }
 
 // FOOTER ADRESS
 
 .footer-adress {
-  width: 231px;
-  margin-right: 70px;
+  margin-bottom: 60px;
+
+  @media screen and (min-width: 768px) {
+    width: 50%;
+  }
+
+  @media screen and (min-width: 1200px) {
+    margin-bottom: 0;
+    margin-right: 70px;
+  }
 
   &__item:not(:last-child) {
-    margin-bottom: 9px;
+    margin-bottom: 8px;
+
+    @media screen and (min-width: 1200) {
+      margin-bottom: 9px;
+    }
   }
 }
 
@@ -48,7 +72,20 @@
 // FOOTER SOCIALS
 
 .footer-socials {
-  margin-right: 93px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 60px;
+
+  @media screen and (min-width: 768px) {
+    width: 50%;
+  }
+
+  @media screen and (min-width: 1200px) {
+    align-items: flex-start;
+    margin-right: 93px;
+    margin-bottom: 0;
+  }
 }
 
 // FOOTER-FORM
@@ -57,21 +94,26 @@
   display: block;
   color: $title-color;
   margin-bottom: 20px;
+  text-align: center;
 }
 
 .footer-form {
   display: flex;
-  width: 570px;
+  flex-direction: column;
+  align-items: center;
+  @media screen and (min-width: 1200px) {
+    flex-direction: row;
+  }
 }
 
 .footer-form__input {
   @extend %input;
   display: block;
-  margin-right: 12px;
-  padding: 16px 15px;
 
-  flex-grow: 1;
+  padding: 16px 15px;
+  width: 100%;
   height: 50px;
+  margin-bottom: 20px;
 
   background-color: transparent;
 
@@ -81,6 +123,17 @@
   outline: none;
 
   transition: border-color $duration $timing-function;
+
+  @media screen and (min-width: 768px) {
+    width: 450px;
+  }
+
+  @media screen and (min-width: 1200px) {
+    flex-direction: row;
+    margin-bottom: 0;
+    margin-right: 12px;
+    width: 358px;
+  }
 
   &:hover,
   &:focus-within {
