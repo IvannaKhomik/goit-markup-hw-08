@@ -2,7 +2,6 @@
   @extend %list;
   display: flex;
   flex-wrap: wrap;
-  align-items: space-between;
 
   @media screen and (min-width: 768px) {
     margin-top: -30px;
@@ -11,6 +10,7 @@
 }
 
 .portfolio-list__item {
+  display: flex;
   &:not(:last-child) {
     margin-bottom: 30px;
     @media screen and (min-width: 768px) {
@@ -30,8 +30,8 @@
 }
 
 .portfolio-card {
-  display: block;
-  height: 100%;
+  display: flex;
+  flex-direction: column;
   transition: box-shadow $duration $timing-function;
   @extend %link;
 
@@ -80,6 +80,7 @@
   border: 1px solid #eeeeee;
   border-top: none;
   padding: 20px 24px;
+  flex-grow: 1;
 }
 
 .portfolio-card__subtitle {
