@@ -715,9 +715,13 @@ ul {
   position: fixed;
   top: 0;
   left: 0;
+  padding-top: 93px;
+  padding-left: 15px;
+  padding-right: 15px;
   width: 100vw;
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.2);
+  overflow-y: scroll;
   -webkit-transition: opacity 500ms ease-in-out, visibility 500ms ease-in-out;
   transition: opacity 500ms ease-in-out, visibility 500ms ease-in-out;
 }
@@ -726,15 +730,15 @@ ul {
   pointer-events: none;
   visibility: hidden;
 }
+@media screen and (min-width: 481px) {
+  .backdrop {
+    padding: 0;
+  }
+}
 
 .modal {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
   padding: 40px;
-  width: 528px;
+  position: relative;
   min-height: 581px;
   background: #ffffff;
   -webkit-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
@@ -746,9 +750,24 @@ ul {
   transition: transform 500ms cubic-bezier(0.4, 0, 0.2, 1);
   transition: transform 500ms cubic-bezier(0.4, 0, 0.2, 1), -webkit-transform 500ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-.backdrop--hidden .modal {
-  -webkit-transform: translate(-50%, -50%) perspective(400px) rotateY(-90deg);
-          transform: translate(-50%, -50%) perspective(400px) rotateY(-90deg);
+@media screen and (min-width: 480px) {
+  .modal {
+    width: 450px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+  }
+  .backdrop--hidden .modal {
+    -webkit-transform: translate(-50%, -50%) perspective(400px) rotateY(-90deg);
+            transform: translate(-50%, -50%) perspective(400px) rotateY(-90deg);
+  }
+}
+@media screen and (min-width: 1200px) {
+  .modal {
+    width: 528px;
+  }
 }
 
 .modal-form {
@@ -761,9 +780,15 @@ ul {
   display: block;
   margin-bottom: 12px;
   font-size: 20px;
-  line-height: 1.15;
+  font-weight: 700;
+  line-height: 1.5;
   letter-spacing: 0.03em;
   text-align: center;
+}
+@media screen and (min-width: 1200px) {
+  .modal-form__title {
+    line-height: 1.15;
+  }
 }
 
 .form-field {
@@ -890,10 +915,17 @@ ul {
 }
 
 .checkbox__label {
-  font-size: 14px;
-  line-height: 1.7;
+  font-size: 12px;
+  line-height: 1.17;
   letter-spacing: 0.03em;
   color: #757575;
+}
+@media screen and (min-width: 1200px) {
+  .checkbox__label {
+    font-size: 14px;
+    line-height: 1.7;
+    letter-spacing: 0.03em;
+  }
 }
 
 .checkbox__link {

@@ -1,11 +1,6 @@
 .modal {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
   padding: 40px;
-
-  width: 528px;
+  position: relative;
   min-height: 581px;
 
   background: $title-color;
@@ -14,8 +9,20 @@
   @include bordered(transparent);
   transition: transform 500ms $timing-function;
 
-  .backdrop--hidden & {
-    transform: translate(-50%, -50%) perspective(400px) rotateY(-90deg);
+  @media screen and (min-width: 480px) {
+    width: 450px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    .backdrop--hidden & {
+      transform: translate(-50%, -50%) perspective(400px) rotateY(-90deg);
+    }
+  }
+
+  @media screen and (min-width: 1200px) {
+    width: 528px;
   }
 }
 
@@ -31,8 +38,12 @@
   display: block;
   margin-bottom: 12px;
 
-  @include font(20px, null, 1.15, 0.03em);
+  @include font(20px, 700, 1.5, 0.03em);
   text-align: center;
+
+  @media screen and (min-width: 1200px) {
+    line-height: 1.15;
+  }
 }
 
 .form-field {
@@ -140,8 +151,11 @@
 }
 
 .checkbox__label {
-  @include font(14px, null, 1.7, 0.03em);
+  @include font(12px, null, 1.17, 0.03em);
   color: $secondary-text-color;
+  @media screen and (min-width: 1200px) {
+    @include font(14px, null, 1.7, 0.03em);
+  }
 }
 
 .checkbox__link {

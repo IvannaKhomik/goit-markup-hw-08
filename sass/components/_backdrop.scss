@@ -2,9 +2,13 @@
   position: fixed;
   top: 0;
   left: 0;
+  padding-top: 93px;
+  padding-left: 15px;
+  padding-right: 15px;
   width: 100vw;
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.2);
+  overflow-y: scroll;
 
   transition: opacity 500ms ease-in-out, visibility 500ms ease-in-out;
 
@@ -12,5 +16,9 @@
     opacity: 0;
     pointer-events: none;
     visibility: hidden;
+  }
+
+  @media screen and (min-width: 481px) {
+    padding: 0;
   }
 }
