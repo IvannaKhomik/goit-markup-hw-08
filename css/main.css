@@ -293,6 +293,12 @@ ul {
   padding: 0;
 }
 
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
 .no-scroll {
   overflow: hidden;
 }
@@ -353,7 +359,7 @@ ul {
   margin: 0;
 }
 
-.footer-adress__link, .portfolio-card, .portfolio-nav__item, .clients__link, .header-contacts__link, .header-nav__link, .socials__link, .mob-socials__link, .mob-contacts__link, .mob-menu__link, .logo {
+.footer-adress__link, .portfolio-card, .portfolio-nav__item:not(:last-child), .clients__link, .header-contacts__link, .header-nav__link, .socials__link, .mob-socials__link, .mob-contacts__link, .mob-menu__link, .logo {
   text-decoration: none;
 }
 
@@ -390,7 +396,7 @@ ul {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  max-width: 360px;
+  width: 360px;
 }
 @media screen and (min-width: 1200px) {
   .container--hero {
@@ -1171,16 +1177,10 @@ ul {
   background-repeat: no-repeat;
 }
 
-@media (min-resolution: 2ddpx) {
+@media (min-device-pixel-ratio: 2), (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
   .hero {
     background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(47, 48, 58, 0.4)), to(rgba(47, 48, 58, 0.4))), url(../images/hero/hero-mobile2x.jpg);
     background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url(../images/hero/hero-mobile2x.jpg);
-  }
-}
-@media (min-resolution: 3ddpx) {
-  .hero {
-    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(47, 48, 58, 0.4)), to(rgba(47, 48, 58, 0.4))), url(../images/hero/hero-mobile3x.jpg);
-    background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url(../images/hero/hero-mobile3x.jpg);
   }
 }
 @media (min-width: 480px) and (max-width: 768px) {
@@ -1190,16 +1190,10 @@ ul {
     background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url(../images/hero/hero-tablet.jpg);
   }
 }
-@media (min-width: 480px) and (max-width: 768px) and (min-resolution: 2ddpx) {
+@media (min-width: 480px) and (max-width: 768px) and (min-device-pixel-ratio: 2), (min-width: 480px) and (max-width: 768px) and (-webkit-min-device-pixel-ratio: 2), (min-width: 480px) and (max-width: 768px) and (min-resolution: 192dpi), (min-width: 480px) and (max-width: 768px) and (min-resolution: 2dppx) {
   .hero {
     background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(47, 48, 58, 0.4)), to(rgba(47, 48, 58, 0.4))), url(../images/hero/hero-tablet2x.jpg);
     background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url(../images/hero/hero-tablet2x.jpg);
-  }
-}
-@media (min-width: 480px) and (max-width: 768px) and (min-resolution: 3ddpx) {
-  .hero {
-    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(47, 48, 58, 0.4)), to(rgba(47, 48, 58, 0.4))), url(../images/hero/hero-tablet3x.jpg);
-    background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url(../images/hero/hero-tablet3x.jpg);
   }
 }
 @media (min-width: 768px) {
@@ -1209,16 +1203,10 @@ ul {
     background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url(../images/hero/hero-desktop.jpg);
   }
 }
-@media (min-width: 768px) and (min-resolution: 2ddpx) {
+@media (min-width: 768px) and (min-device-pixel-ratio: 2), (min-width: 768px) and (-webkit-min-device-pixel-ratio: 2), (min-width: 768px) and (min-resolution: 192dpi), (min-width: 768px) and (min-resolution: 2dppx) {
   .hero {
     background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(47, 48, 58, 0.4)), to(rgba(47, 48, 58, 0.4))), url(../images/hero/hero-desktop2x.jpg);
     background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url(../images/hero/hero-desktop2x.jpg);
-  }
-}
-@media (min-width: 768px) and (min-resolution: 3ddpx) {
-  .hero {
-    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(47, 48, 58, 0.4)), to(rgba(47, 48, 58, 0.4))), url(../images/hero/hero-desktop3x.jpg);
-    background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url(../images/hero/hero-desktop3x.jpg);
   }
 }
 @media (min-width: 768px) and (min-width: 1200px) {
@@ -1236,6 +1224,14 @@ ul {
   text-align: center;
   text-transform: uppercase;
   color: #ffffff;
+}
+@media screen and (min-width: 1200px) {
+  .hero__title {
+    font-size: 44px;
+    font-weight: 900;
+    line-height: 1.36;
+    letter-spacing: 0.06em;
+  }
 }
 
 .hero__btn {
@@ -1528,16 +1524,29 @@ ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  margin-bottom: 50px;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin-bottom: 40px;
+}
+@media screen and (min-width: 768px) {
+  .portfolio-nav {
+    margin-bottom: 30px;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .portfolio-nav {
+    margin-bottom: 50px;
+  }
 }
 
-.portfolio-nav__item {
-  margin-left: 8px;
+.portfolio-nav__item:not(:last-child) {
+  margin-bottom: 15px;
+  margin-right: 8px;
 }
-.portfolio-nav__item:first-child {
+.portfolio-nav__item:not(:last-child):first-child {
   margin-left: 0;
 }
 
@@ -1561,23 +1570,48 @@ ul {
 }
 
 .portfolio-list {
-  margin-top: 50px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  margin-top: -30px;
-  margin-left: -30px;
+  -webkit-box-align: space-between;
+      -ms-flex-align: space-between;
+          align-items: space-between;
+}
+@media screen and (min-width: 768px) {
+  .portfolio-list {
+    margin-top: -30px;
+    margin-left: -30px;
+  }
 }
 
-.portfolio-list__item {
-  margin-top: 30px;
-  margin-left: 30px;
+.portfolio-list__item:not(:last-child) {
+  margin-bottom: 30px;
+}
+@media screen and (min-width: 768px) {
+  .portfolio-list__item:not(:last-child) {
+    margin-bottom: 0;
+  }
+}
+@media screen and (min-width: 768px) {
+  .portfolio-list__item {
+    margin-top: 30px;
+    margin-left: 30px;
+    -ms-flex-preferred-size: calc((100% - 60px) / 2);
+        flex-basis: calc((100% - 60px) / 2);
+  }
+}
+@media screen and (min-width: 1200px) {
+  .portfolio-list__item {
+    -ms-flex-preferred-size: calc((100% - 90px) / 3);
+        flex-basis: calc((100% - 90px) / 3);
+  }
 }
 
 .portfolio-card {
   display: block;
+  height: 100%;
   -webkit-transition: -webkit-box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
   transition: -webkit-box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
   transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);

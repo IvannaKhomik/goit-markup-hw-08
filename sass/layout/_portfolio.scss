@@ -1,19 +1,37 @@
 .portfolio-list {
   @extend %list;
-  margin-top: 50px;
   display: flex;
   flex-wrap: wrap;
-  margin-top: -30px;
-  margin-left: -30px;
+  align-items: space-between;
+
+  @media screen and (min-width: 768px) {
+    margin-top: -30px;
+    margin-left: -30px;
+  }
 }
 
 .portfolio-list__item {
-  margin-top: 30px;
-  margin-left: 30px;
+  &:not(:last-child) {
+    margin-bottom: 30px;
+    @media screen and (min-width: 768px) {
+      margin-bottom: 0;
+    }
+  }
+
+  @media screen and (min-width: 768px) {
+    margin-top: 30px;
+    margin-left: 30px;
+    flex-basis: calc((100% - 30px * 2) / 2);
+  }
+
+  @media screen and (min-width: 1200px) {
+    flex-basis: calc((100% - 30px * 3) / 3);
+  }
 }
 
 .portfolio-card {
   display: block;
+  height: 100%;
   transition: box-shadow $duration $timing-function;
   @extend %link;
 
