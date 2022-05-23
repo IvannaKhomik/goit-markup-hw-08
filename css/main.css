@@ -1649,6 +1649,11 @@ img {
           transform: translateY(0);
   opacity: 1;
 }
+@media (max-width: 479px) {
+  .portfolio-card__overlay {
+    overflow-y: scroll;
+  }
+}
 
 .portfolio-card__meta {
   border: 1px solid #eeeeee;
