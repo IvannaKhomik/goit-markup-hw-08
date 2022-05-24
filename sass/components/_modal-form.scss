@@ -165,7 +165,8 @@
 
 .checkbox__icon {
   display: inline-block;
-  @include icon(16px, 15px);
+  min-width: 16px;
+  min-height: 15px;
 
   background-color: transparent;
   border: 2px solid $primary-text-color;
