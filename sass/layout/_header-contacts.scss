@@ -5,8 +5,6 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding-top: 21px;
-  padding-bottom: 21px;
 
   @media screen and (min-width: 1200px) {
     flex-direction: row;
@@ -29,6 +27,18 @@
     color: $accent-color;
   }
 
+  &--top {
+    @media screen and (max-width: 1199px) {
+      padding-top: 21px;
+    }
+  }
+
+  &--bottom {
+    @media screen and (max-width: 1199px) {
+      padding-bottom: 21px;
+    }
+  }
+
   @media screen and (min-width: 1200px) {
     padding-top: 32px;
     padding-bottom: 32px;
@@ -41,10 +51,10 @@
     @media screen and (min-width: 768px) and (max-width: 1199px) {
       margin-bottom: 10px;
     }
+  }
 
-    @media screen and (min-width: 1200px) {
-      margin-right: 30px;
-    }
+  @media screen and (min-width: 1200px) {
+    margin-right: 30px;
   }
 }
 
