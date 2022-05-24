@@ -7,6 +7,7 @@
   background-color: $title-color;
   transition: opacity 250ms $timing-function, visibility 250ms $timing-function;
   overflow: auto;
+  z-index: 1;
 
   @media screen and (min-width: 768px) {
     display: none;
